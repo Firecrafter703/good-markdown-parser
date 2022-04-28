@@ -100,6 +100,16 @@ public class MarkdownParseTest {
         assertEquals(expected, actual);
     }
     @Test
+    public void Test9() throws IOException{
+        List expected = List.of("[f][f]");
+
+        Path fileName = Path.of("test-file9.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> actual = MarkdownParse.getLinks(content);
+
+        assertEquals(expected, actual);
+    }
+    @Test
     public void testFails() {
 	    assertEquals("this will succeed",8,4+4);
     }
